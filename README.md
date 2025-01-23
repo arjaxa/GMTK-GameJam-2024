@@ -22,9 +22,7 @@ https://arigdev.itch.io/damage-vs-debt-gmtk-game-jam-2024
 
 * Use the arrow keys or WASD keys to control your character's movement.
 * Avoid enemies and shoot them and collect the lever shards.
-![Screenshot 2025-01-23 122616](https://github.com/user-attachments/assets/c5ae1156-1002-42c0-ac06-8225960ef47a)
 
-![Screenshot 2025-01-23 122552](https://github.com/user-attachments/assets/2cae6656-0fd1-457b-a068-2d79eb6aedc8)
 
 
 **Technical Details**
