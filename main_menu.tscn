@@ -1,0 +1,135 @@
+[gd_scene load_steps=7 format=3 uid="uid://dch2wd33k6154"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_cek6m"]
+[ext_resource type="Texture2D" uid="uid://bvctefmxrhkfk" path="res://mainMenuBackground.PNG" id="1_fp34a"]
+[ext_resource type="Texture2D" uid="uid://dy6skkq888y1k" path="res://crownPlaceholder.PNG" id="3_0h62o"]
+[ext_resource type="Script" path="res://Crown.gd" id="4_7khdj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sygga"]
+bg_color = Color(0.356863, 0.662745, 0.615686, 1)
+border_width_left = 16
+border_width_top = 16
+border_width_right = 16
+border_width_bottom = 16
+border_color = Color(0.639216, 0.819608, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wsn1e"]
+bg_color = Color(0.357359, 0.66519, 0.616617, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.640742, 0.820795, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="Node" type="Node"]
+script = ExtResource("1_cek6m")
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -4.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_fp34a")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -530.0
+offset_top = 76.0
+offset_right = 542.0
+offset_bottom = 260.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 75
+theme_override_styles/normal = SubResource("StyleBoxFlat_sygga")
+text = "Damage vs Debt"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -505.0
+offset_top = -246.0
+offset_right = 546.0
+offset_bottom = -132.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_wsn1e")
+text = " Play Game "
+
+[node name="Button2" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_wsn1e")
+text = "Information"
+
+[node name="explainPanel" type="Panel" parent="."]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -361.5
+offset_top = -565.0
+offset_right = 381.5
+offset_bottom = -126.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="explainPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Rioters are attacking against you in regards to a low paycheck. Whilst you can't afford to pay for them all, you also can't afford to lose your life. Balance wounds with crippling debt in this 2d top down preview.
+
+Shoot with mouse
+Walk with WASD or arrow keys
+Avoid the red guys and collect the lever shards!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Crown" type="TextureRect" parent="."]
+visible = false
+offset_left = 48.0
+offset_top = 74.0
+offset_right = 685.0
+offset_bottom = 425.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_0h62o")
+stretch_mode = 2
+script = ExtResource("4_7khdj")
+
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button2" to="." method="_on_button_2_pressed"]

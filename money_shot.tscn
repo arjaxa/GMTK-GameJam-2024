@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cc5jl001dup87"]
+
+[ext_resource type="Script" path="res://MoneyShot.gd" id="1_72stv"]
+[ext_resource type="Texture2D" uid="uid://crvy83th5iu7" path="res://coin0.png" id="2_p5427"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tcjgl"]
+size = Vector2(75, 63)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ptydc"]
+size = Vector2(85, 70)
+
+[node name="MoneyShot" type="RigidBody2D"]
+position = Vector2(78, 47)
+gravity_scale = 0.0
+script = ExtResource("1_72stv")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(0, -0.999996)
+scale = Vector2(0.138889, 0.144024)
+texture = ExtResource("2_p5427")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1.5, -1.5)
+shape = SubResource("RectangleShape2D_tcjgl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.5, -2)
+shape = SubResource("RectangleShape2D_ptydc")
